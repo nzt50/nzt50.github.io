@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="关键输入参数速查表ISTART控制如何生成初始波函数 0：随机生成波函数 1：从WAVECAR中读取波函数，当读取失败时，会随机生成 ICHAGE控制如何生成初始电荷密度 0：读取WAVECAR生成电荷密度，当读取失败时，通过原子电荷密度叠加生成初始电荷密度 1：从CHGCAR中的设定读取电荷密度 2：通过原子电荷密度的叠加方法，生成初始的猜测电荷密度 11：从CHGCAR读取电荷密度，且在自洽循">
+  <meta name="description" content="关键输入参数速查表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VASP-INCAR解释">
 <meta property="og:url" content="http://example.com/2023/11/11/1/index.html">
 <meta property="og:site_name" content="Ni Zitao&#39;s Blog">
-<meta property="og:description" content="关键输入参数速查表ISTART控制如何生成初始波函数 0：随机生成波函数 1：从WAVECAR中读取波函数，当读取失败时，会随机生成 ICHAGE控制如何生成初始电荷密度 0：读取WAVECAR生成电荷密度，当读取失败时，通过原子电荷密度叠加生成初始电荷密度 1：从CHGCAR中的设定读取电荷密度 2：通过原子电荷密度的叠加方法，生成初始的猜测电荷密度 11：从CHGCAR读取电荷密度，且在自洽循">
+<meta property="og:description" content="关键输入参数速查表">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-10T15:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-20T02:53:52.578Z">
+<meta property="article:modified_time" content="2023-11-20T02:56:10.347Z">
 <meta property="article:author" content="Ni">
 <meta name="twitter:card" content="summary">
 
@@ -202,7 +202,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-20 11:53:52" itemprop="dateModified" datetime="2023-11-20T11:53:52+09:00">2023-11-20</time>
+                <time title="修改时间：2023-11-20 11:56:10" itemprop="dateModified" datetime="2023-11-20T11:56:10+09:00">2023-11-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,7 +225,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="关键输入参数速查表"><a href="#关键输入参数速查表" class="headerlink" title="关键输入参数速查表"></a>关键输入参数速查表</h1><h2 id="ISTART"><a href="#ISTART" class="headerlink" title="ISTART"></a>ISTART</h2><p>控制如何生成初始波函数</p>
+        <h1 id="关键输入参数速查表"><a href="#关键输入参数速查表" class="headerlink" title="关键输入参数速查表"></a>关键输入参数速查表</h1><span id="more"></span>
+
+<h2 id="ISTART"><a href="#ISTART" class="headerlink" title="ISTART"></a>ISTART</h2><p>控制如何生成初始波函数</p>
 <p>0：随机生成波函数</p>
 <p>1：从WAVECAR中读取波函数，当读取失败时，会随机生成</p>
 <h2 id="ICHAGE"><a href="#ICHAGE" class="headerlink" title="ICHAGE"></a>ICHAGE</h2><p>控制如何生成初始电荷密度</p>
