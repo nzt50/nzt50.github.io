@@ -192,8 +192,18 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-11-20 15:51:15" itemprop="dateCreated datePublished" datetime="2023-11-20T15:51:15+09:00">2023-11-20</time>
+              <time title="创建时间：2023-11-20 15:51:15 / 修改时间：16:00:21" itemprop="dateCreated datePublished" datetime="2023-11-20T15:51:15+09:00">2023-11-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VASP/" itemprop="url" rel="index"><span itemprop="name">VASP</span></a>
+                </span>
             </span>
 
           
@@ -207,7 +217,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p>INCAR-opt计算</p>
+<h1 id="Initial-parameters-I-O"><a href="#Initial-parameters-I-O" class="headerlink" title="Initial parameters I&#x2F;O"></a>Initial parameters I&#x2F;O</h1><p>SYSTEM &#x3D; Au<br>KPAR &#x3D; 4<br>NCORE &#x3D; 12 # number of compute cores that work on an individual orbital<br>ISTART &#x3D; 1 # whether or not to read the WAVECAR file.<br>ICHARG &#x3D; 1 # how VASP constructs the initial charge density.<br>LWAVE &#x3D; .TRUE. # whether the wavefunctions are written to the WAVECAR file<br>LCHARG &#x3D; .TRUE. # LCHARG determines whether the charge densities (files CHGCAR and CHG) are written.<br>LVTOT &#x3D; .FALSE. # whether the total local potential is written to the LOCPOT file<br>LVHAR &#x3D; .FALSE. # whether the electrostatic potential is written to the LOCPOT file<br>LELF &#x3D; .FALSE. # whether to create an ELFCAR file or not.<br># LORBIT &#x3D; 11 # determines whether the PROCAR or PROOUT files are written.</p>
+<h1 id="Electronic-Relaxation"><a href="#Electronic-Relaxation" class="headerlink" title="Electronic Relaxation"></a>Electronic Relaxation</h1><p>ENCUT &#x3D; 400 # cutoff energy for the planewave basis set in eV<br>ISMEAR &#x3D; 1 # how the partial occupancies are set for each orbital.<br>SIGMA &#x3D; 0.2 # the width of the smearing in eV.<br>EDIFF &#x3D; 1E-6 # global break condition for the electronic SC-loop<br>NELMIN &#x3D; 5 # specifies the minimum number of electronic SCF steps.<br>NELM &#x3D; 300 # maximum number of electronic SC (selfconsistency) steps<br>GGA &#x3D; PE # type of generalized-gradient-approximation one wishes to use.<br>LREAL &#x3D; Auto # whether the projection operators are evaluated in real-space or in reciprocal space.<br>LDIPOL &#x3D; .TRUE.<br>IDIPOL &#x3D; 3 # add dipole correction<br>ISYM &#x3D; 0 # determines the way VASP treats symmetry.<br>ALGO &#x3D; Fast # electronic minimisation algorithm<br># PREC &#x3D; Normal # specifies the “precision”-mode<br># ADDGRID &#x3D; .TRUE. # whether an additional support grid is used for the evaluation of the augmentation charges<br># AMIX &#x3D; 0.2<br># BMIX &#x3D; 0.0001<br># AMIX_MAG &#x3D; 0.8<br># BMIX_MAG &#x3D; 0.0001<br># MAXMIX &#x3D; 40</p>
+<h1 id="Magnetic-parameters"><a href="#Magnetic-parameters" class="headerlink" title="Magnetic parameters"></a>Magnetic parameters</h1><p> ISPIN &#x3D; 1 # 1-CLOSE 2-OPEN<br>#  MAGMOM &#x3D; 33<em>0.0 4</em>2.0 4*-2.0 4<em>2.0 4</em>-2.0<br># NUPDOWN &#x3D; 0<br># VOSKOWN &#x3D; 1</p>
+<h1 id="Geometry-opt-parameters"><a href="#Geometry-opt-parameters" class="headerlink" title="Geometry opt parameters"></a>Geometry opt parameters</h1><p>EDIFFG &#x3D; -0.01 # EDIFFG defines the break condition for the ionic relaxation loop.<br>IBRION &#x3D; 2 # IBRION determines how the ions are updated and moved.<br>POTIM &#x3D; 0.2 # POTIM sets the time step (MD) or step width scaling (ionic relaxations).<br>NSW &#x3D; 300 # maximum number of ionic steps.<br>ISIF &#x3D; 2 # determines whether the stress tensor is calculated and which principal degrees-of-freedom are allowed to change</p>
+
       
     </div>
 
@@ -322,7 +337,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-20 12:06:46" itemprop="dateModified" datetime="2023-11-20T12:06:46+09:00">2023-11-20</time>
+                <time title="修改时间：2023-11-20 16:00:34" itemprop="dateModified" datetime="2023-11-20T16:00:34+09:00">2023-11-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -449,7 +464,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
