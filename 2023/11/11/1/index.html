@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="#关键输入参数速查表 ##ISTART控制如何生成初始波函数 0：随机生成波函数 1：从WAVECAR中读取波函数，当读取失败时，会随机生成 ##ICHAGE控制如何生成初始电荷密度 0：读取WAVECAR生成电荷密度，当读取失败时，通过原子电荷密度叠加生成初始电荷密度 1：从CHGCAR中的设定读取电荷密度 2：通过原子电荷密度的叠加方法，生成初始的猜测电荷密度 11：从CHGCAR读取电荷密度">
+  <meta name="description" content="关键输入参数速查表ISTART控制如何生成初始波函数 0：随机生成波函数 1：从WAVECAR中读取波函数，当读取失败时，会随机生成 ICHAGE控制如何生成初始电荷密度 0：读取WAVECAR生成电荷密度，当读取失败时，通过原子电荷密度叠加生成初始电荷密度 1：从CHGCAR中的设定读取电荷密度 2：通过原子电荷密度的叠加方法，生成初始的猜测电荷密度 11：从CHGCAR读取电荷密度，且在自洽循">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VASP-INCAR解释">
 <meta property="og:url" content="http://example.com/2023/11/11/1/index.html">
 <meta property="og:site_name" content="Ni Zitao&#39;s Blog">
-<meta property="og:description" content="#关键输入参数速查表 ##ISTART控制如何生成初始波函数 0：随机生成波函数 1：从WAVECAR中读取波函数，当读取失败时，会随机生成 ##ICHAGE控制如何生成初始电荷密度 0：读取WAVECAR生成电荷密度，当读取失败时，通过原子电荷密度叠加生成初始电荷密度 1：从CHGCAR中的设定读取电荷密度 2：通过原子电荷密度的叠加方法，生成初始的猜测电荷密度 11：从CHGCAR读取电荷密度">
+<meta property="og:description" content="关键输入参数速查表ISTART控制如何生成初始波函数 0：随机生成波函数 1：从WAVECAR中读取波函数，当读取失败时，会随机生成 ICHAGE控制如何生成初始电荷密度 0：读取WAVECAR生成电荷密度，当读取失败时，通过原子电荷密度叠加生成初始电荷密度 1：从CHGCAR中的设定读取电荷密度 2：通过原子电荷密度的叠加方法，生成初始的猜测电荷密度 11：从CHGCAR读取电荷密度，且在自洽循">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-10T15:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-20T02:47:40.950Z">
+<meta property="article:modified_time" content="2023-11-20T02:53:52.578Z">
 <meta property="article:author" content="Ni">
 <meta name="twitter:card" content="summary">
 
@@ -202,7 +202,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-20 11:47:40" itemprop="dateModified" datetime="2023-11-20T11:47:40+09:00">2023-11-20</time>
+                <time title="修改时间：2023-11-20 11:53:52" itemprop="dateModified" datetime="2023-11-20T11:53:52+09:00">2023-11-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,94 +225,93 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>#关键输入参数速查表</p>
-<p>##ISTART<br>控制如何生成初始波函数</p>
+        <h1 id="关键输入参数速查表"><a href="#关键输入参数速查表" class="headerlink" title="关键输入参数速查表"></a>关键输入参数速查表</h1><h2 id="ISTART"><a href="#ISTART" class="headerlink" title="ISTART"></a>ISTART</h2><p>控制如何生成初始波函数</p>
 <p>0：随机生成波函数</p>
 <p>1：从WAVECAR中读取波函数，当读取失败时，会随机生成</p>
-<p>##ICHAGE<br>控制如何生成初始电荷密度</p>
+<h2 id="ICHAGE"><a href="#ICHAGE" class="headerlink" title="ICHAGE"></a>ICHAGE</h2><p>控制如何生成初始电荷密度</p>
 <p>0：读取WAVECAR生成电荷密度，当读取失败时，通过原子电荷密度叠加生成初始电荷密度</p>
 <p>1：从CHGCAR中的设定读取电荷密度</p>
 <p>2：通过原子电荷密度的叠加方法，生成初始的猜测电荷密度</p>
 <p>11：从CHGCAR读取电荷密度，且在自洽循环中保持不变，适用于非自洽循环计算，如电子态密度的计算</p>
-<p>##ALGO<br>设置自洽迭代过程优化电子波函数的算法</p>
+<h2 id="ALGO"><a href="#ALGO" class="headerlink" title="ALGO"></a>ALGO</h2><p>设置自洽迭代过程优化电子波函数的算法</p>
 <p>N：DAV算法，收敛性好，但速度慢</p>
 <p>V：RMM算法，收敛性差，但速度快（比N快2~3倍）</p>
 <p>F：以上算法的结合，综合表现与V类似</p>
 <p>Tips：结构偏离稳定结构较多的，建议用N，接近稳定结构的，可以用V。</p>
-<p>##EDIFF<br>自洽迭代循环收敛标准，单位为eV</p>
+<h2 id="EDIFF"><a href="#EDIFF" class="headerlink" title="EDIFF"></a>EDIFF</h2><p>自洽迭代循环收敛标准，单位为eV</p>
 <p>自洽迭代过程紧邻两次迭代的系统能量的差与此标准相比。一般设置为1E-5~1E-6，意为两次能量差小于设定的收敛标准，则自洽迭代结束，判定体系收敛。</p>
-<p>##NELM<br>自洽迭代循环的最大次数，通常设置为100</p>
+<h2 id="NELM"><a href="#NELM" class="headerlink" title="NELM"></a>NELM</h2><p>自洽迭代循环的最大次数，通常设置为100</p>
 <p>过渡金属体系、带真空层的体系，设置了自旋极化的体系，此数值需要增加到200，300等。如果仍不能收敛，不建议继续提高此数值，需要尝试调整其他参数达到收敛的目标。</p>
-<p>##IBRION<br>离子步弛豫（离子位置优化）算法</p>
+<h2 id="IBRION"><a href="#IBRION" class="headerlink" title="IBRION"></a>IBRION</h2><p>离子步弛豫（离子位置优化）算法</p>
 <p>0：分子动力学模拟</p>
 <p>1：准牛顿法</p>
 <p>2：共轭梯度法</p>
 <p>5：振动频率计算</p>
 <p>6：弹性常数计算</p>
 <p>Tips：推荐设置值为2，如果初始结构和最终稳定结构接近，可以设置为1。</p>
-<p>##EDIFFG<br>离子步弛豫收敛标准（包含能量标准和力的标准）</p>
+<h2 id="EDIFFG"><a href="#EDIFFG" class="headerlink" title="EDIFFG"></a>EDIFFG</h2><p>离子步弛豫收敛标准（包含能量标准和力的标准）</p>
 <p>正值为系统能量变化（单位为eV），负值为原子上残余力（单位为：eV&#x2F;埃）。多数情况用力的收敛标准判断离子步弛豫是否收敛</p>
 <p>Tips：三维结构可以收敛到-0.01<del>-0.03 eV&#x2F;埃，低维体系可以收敛到-0.03</del>0.05eV&#x2F;埃。</p>
-<p>##NSW<br>最大的离子步的数目 or 分子动力学模拟步数</p>
+<h2 id="NSW"><a href="#NSW" class="headerlink" title="NSW"></a>NSW</h2><p>最大的离子步的数目 or 分子动力学模拟步数</p>
 <p>当IBRION&#x3D;1和2时，NSW代表最大的离子步数目</p>
 <p>当IBRION&#x3D;0时，NSW代表分子动力学模拟步数</p>
-<p>##ISIF<br>离子步弛豫控制</p>
+<h2 id="ISIF"><a href="#ISIF" class="headerlink" title="ISIF"></a>ISIF</h2><p>离子步弛豫控制</p>
 <p>参数说明如下图：</p>
 <p>3：全弛豫，适用于绝大多数的三维结构优化</p>
 <p>2：为固定体积的弛豫，适用于如表面结构优化，微量掺杂体系优化。</p>
 <p>4：固定体积，但是形状可变的弛豫</p>
 <p>Tips：复杂的结构优化过程，可以分步优化，即初始只优化离子（ISIF&#x3D;2）→优化晶胞（ISIF&#x3D;6）→优化离子和晶胞（ISIF&#x3D;3）。</p>
-<p>##PREC<br>总体计算精度控制</p>
+<h2 id="PREC"><a href="#PREC" class="headerlink" title="PREC"></a>PREC</h2><p>总体计算精度控制</p>
 <p>受PREC影响的参数有四类（ENCUT; NGX,NGY,NGZ; NGXF, NGYF, NGZF; ROPT）</p>
 <p>PREC&#x3D;Low | Medium | High | Normal | Accurate | Single。</p>
 <p>下图总结了PREC的设置值与其控制的其他参数值的关系。</p>
 <p>上图如何解读？</p>
 <p>以ENCUT为例，当INCAR文件中未设置ENCUT参数值，此时如果将PREC设置为Normal，则ENCUT将被自动设置为POTCAR（赝势文件）中最大的ENMAX对应的数值。</p>
-<p>##ENCUT<br>平面波截断能，控制用多少平面波展开波函数</p>
+<h2 id="ENCUT"><a href="#ENCUT" class="headerlink" title="ENCUT"></a>ENCUT</h2><p>平面波截断能，控制用多少平面波展开波函数</p>
 <p>Tips：推荐设置为POTCAR（赝势文件）中参数ENMAX值的1.0-1.3倍，从而兼顾计算的精度与效率。</p>
-<p>##AMIX<br>设置自洽迭代循环中新旧电荷密度的混合比例，默认值为0.4</p>
+<h2 id="AMIX"><a href="#AMIX" class="headerlink" title="AMIX"></a>AMIX</h2><p>设置自洽迭代循环中新旧电荷密度的混合比例，默认值为0.4</p>
 <p>自洽迭代不收敛时，可以降低此数值，即降低新的电荷密度混入的比例。</p>
-<p>##ISMEAR<br>设置展宽方法，决定如何进行电子轨道分数占据</p>
+<h2 id="ISMEAR"><a href="#ISMEAR" class="headerlink" title="ISMEAR"></a>ISMEAR</h2><p>设置展宽方法，决定如何进行电子轨道分数占据</p>
 <p>默认值为1</p>
 <p>值为：-5 -4 -3 -2 0 N(正值)</p>
 <p>0：高斯方法(高斯展宽)，适用于导体、半导体和绝缘体，或不清楚体系的导电性质时使用。展宽由SIGMA确定。</p>
 <p>-5：四面体方法，适用于半导体和绝缘体</p>
 <p>Tips：明确的半导体结构使用-5，其他绝大部分情况使用0。注意设置-5时K点网格个数要大于5。</p>
-<p>##SIGMA<br>展宽的宽度，与ISMEAR联用，单位为eV，默认值为0.2</p>
-<p>##ISPIN<br>是否考虑电子自旋极化。默认值为1</p>
+<h2 id="SIGMA"><a href="#SIGMA" class="headerlink" title="SIGMA"></a>SIGMA</h2><p>展宽的宽度，与ISMEAR联用，单位为eV，默认值为0.2</p>
+<h2 id="ISPIN"><a href="#ISPIN" class="headerlink" title="ISPIN"></a>ISPIN</h2><p>是否考虑电子自旋极化。默认值为1</p>
 <p>1：非自旋极化，即每个轨道上自旋向上和自旋向下的电子数量相等。适用于非磁性体系。</p>
 <p>2：自旋极化。适用于磁性体系，如铁磁，反铁磁材料。</p>
-<p>##MAGMOM<br>对于磁性材料，设置初始原子磁矩</p>
+<h2 id="MAGMOM"><a href="#MAGMOM" class="headerlink" title="MAGMOM"></a>MAGMOM</h2><p>对于磁性材料，设置初始原子磁矩</p>
 <p>默认值是每个原子的磁矩均为1</p>
 <p>对于含有d、f轨道的原子，需根据原子核外电子排布情况设置相应的数值</p>
 <p>可以设置每个原子初始磁矩方向，正值为自旋向上，负值为自旋向下。</p>
-<p>##LDA+U<br>Hubbard U模型，描述电子强关联能</p>
+<h2 id="LDA-U"><a href="#LDA-U" class="headerlink" title="LDA+U"></a>LDA+U</h2><p>Hubbard U模型，描述电子强关联能</p>
 <p>参数组为：LDAU、LDAUL、LDAUU、LDAUJ</p>
 <p>LDAU&#x3D;.T. 使用LDA+U功能</p>
 <p>LDAUL&#x3D;-1&#x2F;1&#x2F;2&#x2F;3 分别对应不加U和p、d、f轨道加U</p>
 <p>LDAUU、LDAUJ 分别设置U和J值</p>
 <p>Tips：LDA、GGA等交换相关泛函通常会低估带隙，通过设置此参数可以得到更接近于真实值的带隙计算结果。</p>
-<p>##IVDW<br>范德华力计算方法，在DFT能量计算基础上增加范德华力修正</p>
+<h2 id="IVDW"><a href="#IVDW" class="headerlink" title="IVDW"></a>IVDW</h2><p>范德华力计算方法，在DFT能量计算基础上增加范德华力修正</p>
 <p>10：DFT-D2方法</p>
 <p>11：DFT-D3方法</p>
 <p>推荐首选更新的DFT-D3方法。</p>
 <p>哪些体系需要使用此参数呢？</p>
 <p>在计算表面吸附（物理吸附）；弱相互作用占体系能量比例较大的体系，如分子晶体，层状结构体系时，要使用此参数。</p>
-<p>##LUSE_VDW<br>范德华力计算方法</p>
+<h2 id="LUSE-VDW"><a href="#LUSE-VDW" class="headerlink" title="LUSE_VDW"></a>LUSE_VDW</h2><p>范德华力计算方法</p>
 <p>与IVDW的计算方法不同，此种方法将修改DFT内的能量计算。包含vdW-DF，optPBE-vdW, optB88-vdW, optB88b-vdW, vdw-DF2。</p>
-<p>##NELECT<br>指定体系总电子数目</p>
+<h2 id="NELECT"><a href="#NELECT" class="headerlink" title="NELECT"></a>NELECT</h2><p>指定体系总电子数目</p>
 <p>通常不用修改，默认值结合POSCAR和POTCAR自动计算体系价电子数。</p>
 <p>若要实现体系带电，则可控制此参数实现，在总电子数目基础上减少n个电子，则体系带n个电荷正电，反之是带负电。</p>
 <p>Tips：无法将电荷指定在某个特定原子上</p>
-<p>##LWAVE&#x2F;LCHARG<br>控制是否输出波函数和电荷密度</p>
+<h2 id="LWAVE-LCHARG"><a href="#LWAVE-LCHARG" class="headerlink" title="LWAVE&#x2F;LCHARG"></a>LWAVE&#x2F;LCHARG</h2><p>控制是否输出波函数和电荷密度</p>
 <p>.T.: 写波函数和电荷密度</p>
 <p>.F.: 不写波函数和电荷密度</p>
-<p>##NEDOS<br>态密度数据点个数，通常设置1000-3000</p>
-<p>##LORBIT<br>总态密度投影</p>
+<h2 id="NEDOS"><a href="#NEDOS" class="headerlink" title="NEDOS"></a>NEDOS</h2><p>态密度数据点个数，通常设置1000-3000</p>
+<h2 id="LORBIT"><a href="#LORBIT" class="headerlink" title="LORBIT"></a>LORBIT</h2><p>总态密度投影</p>
 <p>10：投影到s、p、d、f轨道</p>
 <p>11：投影到s、px、py、pz…..轨道</p>
-<p>##RWIGS<br>原子Wigner-Seitz半径，控制分态密度强度</p>
-<p>##NBANDS<br>总能带数</p>
+<h2 id="RWIGS"><a href="#RWIGS" class="headerlink" title="RWIGS"></a>RWIGS</h2><p>原子Wigner-Seitz半径，控制分态密度强度</p>
+<h2 id="NBANDS"><a href="#NBANDS" class="headerlink" title="NBANDS"></a>NBANDS</h2><p>总能带数</p>
 <p>通常计算无需修改参数。</p>
 <p>Tips：特别注意，光学性质计算设置为默认值的3~4倍</p>
 
@@ -392,6 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0%E9%80%9F%E6%9F%A5%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">关键输入参数速查表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ISTART"><span class="nav-number">1.1.</span> <span class="nav-text">ISTART</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICHAGE"><span class="nav-number">1.2.</span> <span class="nav-text">ICHAGE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALGO"><span class="nav-number">1.3.</span> <span class="nav-text">ALGO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EDIFF"><span class="nav-number">1.4.</span> <span class="nav-text">EDIFF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NELM"><span class="nav-number">1.5.</span> <span class="nav-text">NELM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IBRION"><span class="nav-number">1.6.</span> <span class="nav-text">IBRION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EDIFFG"><span class="nav-number">1.7.</span> <span class="nav-text">EDIFFG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NSW"><span class="nav-number">1.8.</span> <span class="nav-text">NSW</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISIF"><span class="nav-number">1.9.</span> <span class="nav-text">ISIF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PREC"><span class="nav-number">1.10.</span> <span class="nav-text">PREC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ENCUT"><span class="nav-number">1.11.</span> <span class="nav-text">ENCUT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AMIX"><span class="nav-number">1.12.</span> <span class="nav-text">AMIX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISMEAR"><span class="nav-number">1.13.</span> <span class="nav-text">ISMEAR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SIGMA"><span class="nav-number">1.14.</span> <span class="nav-text">SIGMA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISPIN"><span class="nav-number">1.15.</span> <span class="nav-text">ISPIN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAGMOM"><span class="nav-number">1.16.</span> <span class="nav-text">MAGMOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LDA-U"><span class="nav-number">1.17.</span> <span class="nav-text">LDA+U</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IVDW"><span class="nav-number">1.18.</span> <span class="nav-text">IVDW</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LUSE-VDW"><span class="nav-number">1.19.</span> <span class="nav-text">LUSE_VDW</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NELECT"><span class="nav-number">1.20.</span> <span class="nav-text">NELECT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LWAVE-LCHARG"><span class="nav-number">1.21.</span> <span class="nav-text">LWAVE&#x2F;LCHARG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NEDOS"><span class="nav-number">1.22.</span> <span class="nav-text">NEDOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LORBIT"><span class="nav-number">1.23.</span> <span class="nav-text">LORBIT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RWIGS"><span class="nav-number">1.24.</span> <span class="nav-text">RWIGS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NBANDS"><span class="nav-number">1.25.</span> <span class="nav-text">NBANDS</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
