@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>schedule | Ni Zitao&#39;s Blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="schedule | Ni Zitao&#39;s Blog">
+  <title>VASP-SCF-Convergence-Method | Ni Zitao&#39;s Blog</title>
+  <meta name="keywords" content=" VASP , INCAR , SCF ">
+  <meta name="description" content="VASP-SCF-Convergence-Method | Ni Zitao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="记录学习生涯">
 <meta property="og:type" content="website">
@@ -282,19 +282,38 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-VASP-SCF-Convergence-Method" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">schedule</h1>
+        <h1 class="article-title">VASP-SCF-Convergence-Method</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="VASP">VASP</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">VASP</a>
+            
+            <a class="color1">INCAR</a>
+            
+            <a class="color4">SCF</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-10-26 18:05:30'>2023-10-26 18:05</time>
+            发布时间 : <time class="date" title='最后更新: 2023-11-24 18:01:15'>2023-11-24 17:43</time>
         
     </div>
     <div class="article-meta">
@@ -316,7 +335,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3VASP%E4%B8%ADSCF%E4%B8%8D%E6%94%B6%E6%95%9B%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="toc-text">解决VASP中SCF不收敛的方法总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E6%AC%A1%E5%B0%9D%E8%AF%95%E4%BB%A5%E4%B8%8B%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">依次尝试以下方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E7%BB%99%E5%87%BA%E4%B8%80%E4%B8%AAVASP%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E9%87%8C%E8%A7%A3%E5%86%B3%E7%9A%84%E4%B8%8D%E6%94%B6%E6%95%9B%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">最后给出一个VASP官方教程里解决的不收敛的方法：</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -332,7 +351,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="解决VASP中SCF不收敛的方法总结"><a href="#解决VASP中SCF不收敛的方法总结" class="headerlink" title="解决VASP中SCF不收敛的方法总结"></a>解决VASP中SCF不收敛的方法总结</h1><span id="more"></span>
+
+<h2 id="依次尝试以下方法："><a href="#依次尝试以下方法：" class="headerlink" title="依次尝试以下方法："></a>依次尝试以下方法：</h2><ol>
+<li>   先检查几何结构是不是合理，非常离谱的初始结构会导致SCF难收敛。</li>
+<li>   依次检查已经设置的参数，对照ppt的建议，是不是选择合理，对于+U和ICHARGE&#x3D;11的任务，添加LMAXMIN&#x3D;4 (对于d区体系)，添加LMAXMIN&#x3D;6 (对于f区体系)。</li>
+<li>   检查是不是ISTART&#x3D;1读取了不合理的波函数，如果是，rm WAVECAR CHGCAR重新跑。</li>
+<li>   如果ALGO&#x3D;Fast或者VeryFast，换成Normal。</li>
+<li>   尝试使用更大的SIGMA值，先粗略收敛，再读取CHGCAR和WAVECAR用小的SIGMA计算。</li>
+<li>   对于非磁性体系（闭壳层ISPIN&#x3D;1）添加：（注意AMIX和BMIX对收敛有很大影响，可以自己调试）<br>  AMIX &#x3D; 0.2<br>  BMIX &#x3D; 0.0001 #almost zero, but 0 will crash some versions</li>
+<li>   对于磁性体系（自旋极化，ISPIN&#x3D;2）添加：<br>  AMIX &#x3D; 0.2<br>  BMIX &#x3D; 0.0001 #almost zero, but 0 will crash some versions<br>  AMIX MAG &#x3D; 0.8<br>  BMIX MAG &#x3D; 0.0001 #almost zero, but 0 will crash some versions</li>
+<li>   尝试更换不同的ISMEAR。</li>
+<li>   检查体系是不是特殊的磁性排列，即MAGMOM设置是否合理。</li>
+<li>   提高积分精度，PREC &#x3D; Accurate 。</li>
+<li>   提高格点精度，ADDGRID &#x3D; .TRUE. 。</li>
+<li>   先用1 1 1 K点计算收敛，再读取CHGCAR，用高K点计算。</li>
+<li>   尝试不同的ALGO 比如：ALGO &#x3D; Conjugate。</li>
+<li>   如果在结构优化或者MD过程中，某一步突然不收敛，使用MAXMIX &#x3D; 50</li>
+<li>   尝试用更小的ENCUT或者更大的ENCUT的预收敛。</li>
+<li>   换更小的赝势或者更soft的赝势。</li>
+</ol>
+<h2 id="最后给出一个VASP官方教程里解决的不收敛的方法："><a href="#最后给出一个VASP官方教程里解决的不收敛的方法：" class="headerlink" title="最后给出一个VASP官方教程里解决的不收敛的方法："></a>最后给出一个VASP官方教程里解决的不收敛的方法：</h2><ol>
+<li>   用ALGO&#x3D;N （是否收敛N to 2，Y to 6）</li>
+<li>ICHARG&#x3D;12 (no charge update，非自洽计算，N to5, Y to 3)</li>
+<li>ICHARG&#x3D;2 AMIX&#x3D;0.1 ; BMIX&#x3D;0.01(N to 4, Y to 6)</li>
+<li>increase BMIXBMIX&#x3D;3.0 ; AMIN&#x3D;0.01(N to 5, Y to 6)</li>
+<li>Bug report</li>
+<li>Use this setting</li>
+</ol>
+<p>-————————————————<br>解决VASP中SCF不收敛的方法总结 <a target="_blank" rel="noopener" href="http://bbs.keinsci.com/thread-11126-1-1.html">http://bbs.keinsci.com/thread-11126-1-1.html</a> (出处: 计算化学公社)<br>-————————————————</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
