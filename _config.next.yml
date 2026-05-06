@@ -1,0 +1,129 @@
+# NexT Config
+# Documentation: https://theme-next.js.org/docs/
+
+# ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
+
+# Put your favicon.ico into `hexo-site/source/` directory.
+favicon:
+  small: /favicon-16x16.png
+  medium: /favicon-32x32.png
+  apple_touch_icon: /apple-touch-icon.png
+  safari_pinned_tab: /safari-pinned-tab.svg
+
+header:
+  menu:
+    home: / || home
+    archives: /archives/ || archive
+    categories: /categories/ || th
+    tags: /tags/ || tags
+    about: /about/ || user
+    #schedule: /schedule/ || calendar
+    #sitemap: /sitemap.xml || sitemap
+    #commonweal: /404/ || heartbeat
+
+  title:
+    # If true, the site title will be displayed in the header.
+    enable: true
+    # separator: -
+
+  subtitle:
+    # If true, the site subtitle will be displayed in the header.
+    enable: true
+
+  cursor_effect: false
+  cursor_effect_option:
+    pointer_events: false
+
+# ---------------------------------------------------------------
+# Sidebar Settings
+# ---------------------------------------------------------------
+
+sidebar:
+  enable: true
+  position: left
+  display: post
+  padding: 12
+  offset: 12
+
+# ---------------------------------------------------------------
+# Post Settings
+# ---------------------------------------------------------------
+
+post:
+  meta:
+    item_text: true
+    created_at: true
+    updated_at:
+      enable: true
+      another_day: true
+  read_more:
+    enable: true
+    content: Read More
+  copyright:
+    enable: true
+    license: CC BY-NC-SA 4.0
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# ---------------------------------------------------------------
+# Footer Settings
+# ---------------------------------------------------------------
+
+footer:
+  since: 2026
+  icon:
+    name: heart
+    animated: true
+    color: "#ff0000"
+  copyright: true
+  powered: true
+  theme:
+    enable: true
+    version: true
+
+# ---------------------------------------------------------------
+# Analytics Settings
+# ---------------------------------------------------------------
+
+analytics:
+  google_analytics:
+    tracking_id:
+  baidu_analytics:
+    tracking_id:
+
+# ---------------------------------------------------------------
+# Reward Settings
+# ---------------------------------------------------------------
+
+reward_settings:
+  enable: false
+  comment: Buy me a coffee
+
+# ---------------------------------------------------------------
+# Miscellaneous Settings
+# ---------------------------------------------------------------
+
+back2top:
+  enable: true
+  icon: rocket
+  animation: true
+
+busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_views: true
+  post_views: true
+
+# ---------------------------------------------------------------
+# Custom Settings
+# ---------------------------------------------------------------
+
+custom_file_path:
+  #head: source/_data/head.njk
+  #header: source/_data/header.njk
+  #sidebar: source/_data/sidebar.njk
+  #postMeta: source/_data/post-meta.njk
+  #postBodyEnd: source/_data/post-body-end.njk
+  #footer: source/_data/footer.njk
+  #bodyEnd: source/_data/body-end.njk
