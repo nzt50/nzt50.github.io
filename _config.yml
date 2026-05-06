@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Ni Zi Tao's Blog
-subtitle: ''
-description: Personal blog about technology, programming and life
-keywords: blog, technology, programming
+title: Ni Zi Tao
+subtitle: Software Engineer
+description: Personal website and blog about technology, programming and research
+keywords: software engineer, blog, technology, programming
 author: Ni Zi Tao
-language: zh-CN
+language: en
 timezone: Asia/Shanghai
 
 # URL

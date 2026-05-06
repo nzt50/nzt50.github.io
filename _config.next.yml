@@ -16,12 +16,15 @@ header:
   menu:
     home: / || home
     archives: /archives/ || archive
-    categories: /categories/ || th
-    tags: /tags/ || tags
     about: /about/ || user
     #schedule: /schedule/ || calendar
     #sitemap: /sitemap.xml || sitemap
     #commonweal: /404/ || heartbeat
+
+  social:
+    GitHub: https://github.com/Nzt50 || github
+    Twitter: https://twitter.com || twitter
+    LinkedIn: https://linkedin.com || linkedin
 
   title:
     # If true, the site title will be displayed in the header.
